@@ -22,7 +22,7 @@ class RegisterApiTest extends TestCase
             'password' => 'Password1234!',
             'password_confirmation' => 'Password1234!',
         ];
-
+        $this->withoutExceptionHandling();
         $response = $this->json('POST', route('register'), $data);
 
         $user = User::first();
